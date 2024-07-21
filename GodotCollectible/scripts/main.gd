@@ -10,14 +10,20 @@ func _ready():
 
 # Randomly spawn a collectible in the screen
 func spawn_collectible():
+	# Create a spawn point for a collectible
 	var spawn_x = randf_range(20, screen_size.x - 20)
 	var spawn_y = randf_range(20, screen_size.y - 20)
 	var spawn_point = Vector2(spawn_x, spawn_y)
+	
+	# Create the collectible and assign it a spawn point
 	var collectible = CollectibleScene.instantiate()
-	print("instance created")
-	collectible.get_collected.connect(_on_collectible_get_collected)
 	collectible.position = spawn_point
 	print(spawn_point)
+	
+	# Connect the signal from the collectible to current node (main)
+	collectible.get_collected.connect(_on_collectible_get_collected)
+	
+	# Add the collectible to the tree and make it discoverable
 	add_child(collectible)
 
 
