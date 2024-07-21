@@ -13,3 +13,5 @@ know why certain project descriptions look more like a description of a unit tes
 repository) and others have in depth descriptions.
 
 ## Projects
+1. First2DProject
+2. GodotCollectibles
