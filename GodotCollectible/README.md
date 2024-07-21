@@ -101,3 +101,10 @@ I then created a box out of these StaticBody2D objects and placed it around the 
 This does have the pitfall of creating extra work if I want to change the size of the play window at a later date.
 The current structure would require me to resize those boundaries for every screen size I want this program to
 run on.
+
+## Learned Skills
+1. Move physics objects with user input
+2. Detect collisions between physics objects
+3. Instantiate objects after a scene initially loads
+4. Connect signals from objects added later
+5. Use StaticBody2D objects
