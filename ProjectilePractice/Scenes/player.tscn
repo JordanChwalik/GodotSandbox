@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bygeh0q7w4u1l"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_vea2w"]
+[ext_resource type="Texture2D" uid="uid://dm006c85u615a" path="res://Resources/icon.svg" id="2_6xc1e"]
+[ext_resource type="Texture2D" uid="uid://ctlc3g3apj0gl" path="res://Resources/BlackCircle.png" id="3_fqfli"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpvve"]
+size = Vector2(127, 129)
+
+[node name="Player" type="RigidBody2D"]
+position = Vector2(550, 335)
+gravity_scale = 0.0
+script = ExtResource("1_vea2w")
+speed = 250
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6xc1e")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_hpvve")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -100)
+
+[node name="Sprite2D" type="Sprite2D" parent="Marker2D"]
+scale = Vector2(0.1, 0.107)
+texture = ExtResource("3_fqfli")
