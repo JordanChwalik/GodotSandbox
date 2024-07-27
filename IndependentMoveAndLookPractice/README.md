@@ -18,7 +18,7 @@ types have currently not been tested, but using the principles learned here coul
 a function is called that registers the strength of a directional input and then calls a third method to determine what direction the
 player is facing. This third method then moves the position of the marker to the appropriate position.
 
-# Additinal Learning
+# Additional Learning
 Going into this project I already knew that Godot used radians instead of degrees to calculate the angles between two objects. What I
 did not know, however; Godot uses radians in the range [-PI, PI] instead of a range from [0, 2PI]. As a result of this found knowledge,
 I had to create a tree that determined the appropriate ranges to check what direction the player is facing. In my code here I used
