@@ -15,4 +15,4 @@ repository) and others have in depth descriptions.
 ## Projects
 1. First2DProject
 2. GodotCollectibles
-3. MoveAndRotatePractice
+3. IndependentMoveAndLookPractice
