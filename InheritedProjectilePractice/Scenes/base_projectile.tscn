@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmk6qtfjtn1a4"]
+
+[ext_resource type="Script" path="res://Scripts/Base_Projectile.gd" id="1_i8aqi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x77li"]
+
+[node name="BaseProjectile" type="RigidBody2D"]
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x77li")
+script = ExtResource("1_i8aqi")
