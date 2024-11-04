@@ -23,6 +23,9 @@ shape = SubResource("RectangleShape2D_hpvve")
 [node name="LookingPoint" type="Marker2D" parent="."]
 position = Vector2(0, -100)
 
-[node name="Sprite2D" type="Sprite2D" parent="LookingPoint"]
+[node name="ReticleSprite" type="Sprite2D" parent="LookingPoint"]
 scale = Vector2(0.1, 0.107)
 texture = ExtResource("3_fqfli")
+
+[node name="Line2D" type="Line2D" parent="LookingPoint"]
+points = PackedVector2Array(-1, 15, -1, -16)

@@ -1,8 +1,10 @@
-extends RigidBody2D
+extends Node
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var player = load("res://Scenes/player.tscn").instantiate()
+	call_deferred("add_child", player)
 	pass # Replace with function body.
 
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgvg3pqi6jwd2"
-path="res://.godot/imported/Fireball.png-b1508d867cdd267458a29d292a4a7b11.ctex"
+uid="uid://7mbv0r3fxdsa"
+path="res://.godot/imported/simple_canon.png-52e8a2127f3c1ef906899035e55c7f02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Fireball.png"
-dest_files=["res://.godot/imported/Fireball.png-b1508d867cdd267458a29d292a4a7b11.ctex"]
+source_file="res://Resources/simple_canon.png"
+dest_files=["res://.godot/imported/simple_canon.png-52e8a2127f3c1ef906899035e55c7f02.ctex"]
 
 [params]
 

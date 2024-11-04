@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1voy8sviq355"]
+
+[ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_qg8e1"]
+[ext_resource type="Script" path="res://Scripts/Cannon.gd" id="2_01qah"]
+[ext_resource type="Texture2D" uid="uid://7mbv0r3fxdsa" path="res://Resources/simple_canon.png" id="3_e4fjp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15gko"]
+size = Vector2(152, 82.5)
+
+[node name="MainScene" type="Node"]
+script = ExtResource("1_qg8e1")
+
+[node name="Canon" type="Node2D" parent="."]
+script = ExtResource("2_01qah")
+
+[node name="Area2D" type="Area2D" parent="Canon"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Canon/Area2D"]
+position = Vector2(82, 298.75)
+shape = SubResource("RectangleShape2D_15gko")
+
+[node name="Sprite2D" type="Sprite2D" parent="Canon"]
+position = Vector2(81, 298)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_e4fjp")
+
+[node name="Marker2D" type="Marker2D" parent="Canon"]
+position = Vector2(122, 296)
+
+[node name="Timer" type="Timer" parent="Canon"]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Canon/Timer" to="Canon" method="_on_timer_timeout"]

@@ -11,22 +11,7 @@ func change_looking_direction(look_direction):
 		$LookingPoint.position = look_direction.normalized() * 100
 	# Handle sprite looking direction here
 		var angle = get_angle_to($LookingPoint.global_position)
-		if angle > -PI / 8 and angle < PI / 8:
-			print("Look right")
-		elif angle >= PI / 8 and angle < 3 * PI / 8:
-			print("Look down right")
-		elif angle >= 3 * PI / 8 and angle < 5 * PI / 8:
-			print("Look down")
-		elif angle >= 5 * PI / 8 and angle < 7 * PI / 8:
-			print("Look down left")
-		elif angle >= 7 * PI / 8 or angle <= -7 * PI / 8:
-			print("Look left")
-		elif angle > -7 * PI / 8 and angle <= -5 * PI / 8:
-			print("Look up left")
-		elif angle > -5 * PI / 8 and angle <= -3 * PI / 8:
-			print("Look up")
-		else:
-			print("Look up right")
+		$LookingPoint.rotation = angle
 	
 func mouse_and_keyboard_movement(delta):
 	var velocity = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down", 0.3)	
@@ -36,6 +21,20 @@ func mouse_and_keyboard_movement(delta):
 	
 	change_looking_direction(get_global_mouse_position() - global_position)
 
+func shoot_projectile():
+	var projectile = load("res://Scenes/fireball.tscn")
+	var test_pos = $LookingPoint.get_global_position()
+	var instance = projectile.instantiate()
+	instance.start_position = $LookingPoint.get_global_position()
+	instance.rotation = get_angle_to($LookingPoint.get_global_position())
+	instance.direction = (get_global_mouse_position() - global_position).normalized()
+	call_deferred("add_sibling", instance)
+	
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	mouse_and_keyboard_movement(delta)
+	if Input.is_action_just_pressed("ui_accept"):
+		print("Shooting")
+		shoot_projectile()
+		

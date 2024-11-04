@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://47uoxbbevjo"]
+
+[ext_resource type="Script" path="res://Scripts/Fireball.gd" id="1_j6flf"]
+[ext_resource type="Texture2D" uid="uid://b4awxkk24omjp" path="res://Resources/Fireball.png" id="2_6lrkf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8obs5"]
+radius = 29.0
+
+[node name="Fireball" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_j6flf")
+max_distance = 1000000
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_6lrkf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(35, 2)
+shape = SubResource("CircleShape2D_8obs5")
+disabled = true
+
+[node name="HurtBox" type="Area2D" parent="."]
+position = Vector2(134, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-99, -5)
+shape = SubResource("CircleShape2D_8obs5")
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
